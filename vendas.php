@@ -5,7 +5,7 @@
                     $input = stripslashes($input);
                     $input = htmlspecialchars($input);
 
-                    return $input;
+                   }
 
                     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         $nome = $_POST['vendas'];                  
@@ -13,8 +13,8 @@
                             $nome = clean_input($vendas);
                             
                         }
-                    }       
-                    
+                          
+                   
                     $server = 'localhost';
                     $user = 'root';
                     $password = 'root';
