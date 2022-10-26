@@ -5,40 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lojas de vendas</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css" /> 
+      
   </head>
   <body>
     <h2>Cadastro de Clientes</h2>    
 
-    <form action="index.php" method="post">
+    <form action="form.php" method="post">
       <div class="form1"><br>
-          <div class="field"><input type="text" name="nome" class="field" placeholder="Nome completo" required/><br>       
-          <input type="email" name="email" class="field" placeholder="E-mail" required/><br>         
-          <input type="tel" name="telefone" class="field" placeholder="Telefone" required/><br>
-          <input type="date" name="nascimento" class="field" placeholder="Data de Nascimento" required><br>
+          <div class="field"><input type="text" name="nome" class="field" placeholder="Nome completo" required/><br>            
+          <input type="email" name="email" class="field" placeholder="E-mail" required/><br>                
+          <input type="tel" name="telefone" class="field" placeholder="Telefone" required/><br>                    
           <div class="cad"></div><input type="submit" name="submit" value="Cadastrar" onclick="msg()">
         </div>
       </div>    
   </form>
 
         
-      </form>
+      
      <h2>Cadastro de Produtos</h2>
-     <form method="get" action="post">
+     <form action="cadastro.php" method="post" >
       <div class="form1"><br>
         <input type="text" name="nome" placeholder="Digite o nome do produto" required/><br>
-        <div class="cad"></div><input type="submit" name="enviar" value="Cadastrar" onclick="msg()">
+        <div class="cad"></div><input type="submit" name="enviar" value="Cadastrar" onclick="msg()">        
       </div>
+    </form>
 
       
       <h2>Consulta de Vendas</h2>
-      <form method="get" action="post">
+      <form action="consulta.php" method="post" >
         <div class="form1"><br>
         <input type="text" name="nome" placeholder="Digite o nome do produto" required/><br>
-        <div class="cad"></div><input type="submit" name="enviar" value="Consultar" onclick="msg1()" />
-      </form>
-    </div>
+        <div class="cad"></div><input type="submit" name="enviar" value="Consultar" onclick="msg()" />
+      </div>
+    </form>
+    
 
     </ul>
   </body>
@@ -48,9 +49,4 @@
 
 
 
-    <!-- <form method="get" action="envio_dados.php">
-        <input type="text" name="nome" placeholder="Digite seu nome aqui" />
-        <input type="e-mail" name="email" placeholder="Digite seu e-mail" />
-        <input type="tel" name="email" placeholder="Digite seu telefone" />
-        <input type="button" value="Cadastrar" onclick="msg()">
-        <input type="submit" name="enviar" value="Cadastrar" onclick="msg()" -->
+    <!-- <script src="script.js"></script> -->
