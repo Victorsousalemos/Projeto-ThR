@@ -5,15 +5,16 @@
                     $input = stripslashes($input);
                     $input = htmlspecialchars($input);
 
-                    return $input;
+                  }
 
-                    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+                if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         $produtos = $_POST['produtos'];          
                              
                             $produtos = clean_input($produtos);
                           
                         }
-                    }      
+                         
 
                     $server = 'localhost';
                     $user = 'root';
