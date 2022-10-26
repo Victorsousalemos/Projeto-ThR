@@ -5,15 +5,15 @@
                     $input = stripslashes($input);
                     $input = htmlspecialchars($input);
 
-                    return $input;
+                    }
 
                     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         $nome = $_POST['consulta'];                  
                              
                             $nome = clean_input($consulta);
                             
-                        }
-                    }                   
+                     }   
+                                      
                     $server = 'localhost';
                     $user = 'root';
                     $password = 'root';
