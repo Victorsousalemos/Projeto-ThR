@@ -5,8 +5,9 @@
                     $input = stripslashes($input);
                     $input = htmlspecialchars($input);
 
-                   
-                    ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                   }
+
+                  If ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         $nome = $_POST['nome'];
                         $email = $_POST['email'];                        
                         $telefone = $_POST['telefone'];
@@ -16,7 +17,8 @@
                             $email = clean_input($email);                    
                             $telefone = clean_input($telefone);
                         }
-                    }   
+
+                     
                     
                     $server = 'localhost';
                     $user = 'root';
