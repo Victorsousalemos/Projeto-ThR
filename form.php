@@ -17,15 +17,25 @@
                             $email = clean_input($email);                    
                             $telefone = clean_input($telefone);
                         }
-                    }                   
+                    }   
                     
-                    
+                    $server = 'localhost';
+                    $user = 'root';
+                    $password = 'root';
+                    $dbname = 'vendas';
+                    $port = '3306';
 
-                    echo $nome . '<br>';
-                    echo $email . '<br>';                     
-                    echo $telefone . '<br>';                 
-                    
+                    $db_connect = new mysqli($server, $user, $password, $dbname, $port);
 
+                    if ($db_connect->connect_error == true) {
+                        echo 'Não foi possível conectar à base de dados.';
+                    } else {
+                        $sql = "INSERT INTO clientes(nome,email,telefone) VALUES ('$nome', '$email', '$telefone')";
+                    }
+                                                  
+                            $sql = "SELECT * FROM clientes";
+
+                            $result = $db_connect->query($sql);
                     ?>
 
 

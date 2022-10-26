@@ -8,13 +8,13 @@
                     return $input;
 
                     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-                        $produtos = $_POST['produtos'];          
+                        $nome = $_POST['vendas'];                  
                              
-                            $produtos = clean_input($produtos);
-                          
+                            $nome = clean_input($vendas);
+                            
                         }
-                    }      
-
+                    }       
+                    
                     $server = 'localhost';
                     $user = 'root';
                     $password = 'root';
@@ -26,12 +26,13 @@
                     if ($db_connect->connect_error == true) {
                         echo 'Não foi possível conectar à base de dados.';
                     } else {
-                        $sql = "INSERT INTO produtos(nome) VALUES ('$nome')";
-                        
-                    }                           
-                            $sql = "SELECT * FROM produtos";
+                        $sql = "INSERT INTO vendas(produto,nome,email,telefone) VALUES ('$produto,'$nome', '$email', '$telefone')";
+                    }
+                     
+                            $sql = "SELECT * FROM clientes";
 
                             $result = $db_connect->query($sql);
+                                                            
                     
 
                     ?>
