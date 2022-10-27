@@ -1,2 +1,2 @@
 # Projeto-ThR
- Projeto em PHP e Laravel
+ Projeto em PHP
