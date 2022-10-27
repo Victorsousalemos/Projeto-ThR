@@ -5,6 +5,8 @@
                     $input = stripslashes($input);
                     $input = htmlspecialchars($input);
 
+                    return $input;
+
                     }
 
                     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -16,7 +18,7 @@
                                       
                     $server = 'localhost';
                     $user = 'root';
-                    $password = 'root';
+                    $password = '';
                     $dbname = 'vendas';
                     $port = '3306';
 
@@ -26,13 +28,15 @@
                         echo 'Não foi possível conectar à base de dados.';
                     } else {
                         $sql = "INSERT INTO consulta(nome) VALUES ('$nome',)"; 
-                                          
-                        }
-                    
-
-                        $sql = "SELECT * FROM consulta";
-
-                        $result = $db_connect->query($sql);
+                        
+                        $db_connect->query($sql);  
+                        
+                        echo "<script> alert('Sucesso')</script>";
+                        
+                        echo "<script>setTimeout(function(){
+                            window.location.href = 'index.html'}, 2000)</script>";
+                        
+                    }                        
 
                         
                 <table>

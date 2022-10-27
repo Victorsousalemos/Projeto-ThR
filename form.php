@@ -5,24 +5,24 @@
                     $input = stripslashes($input);
                     $input = htmlspecialchars($input);
 
+                    return $input;
+
                    }
 
-                  If ($_SERVER['REQUEST_METHOD'] == 'POST') {
-                        $nome = $_POST['nome'];
-                        $email = $_POST['email'];                        
-                        $telefone = $_POST['telefone'];
-                             
+                  
+                    $nome = $_POST['nome'];
+                    $email = $_POST['email'];                        
+                    $telefone = $_POST['telefone'];
+                                
+                            
+                    $nome = clean_input($nome);
+                    $email = clean_input($email);                    
+                    $telefone = clean_input($telefone);
                         
-                            $nome = clean_input($nome);
-                            $email = clean_input($email);                    
-                            $telefone = clean_input($telefone);
-                        }
-
-                     
-                    
+                   
                     $server = 'localhost';
                     $user = 'root';
-                    $password = 'root';
+                    $password = '';
                     $dbname = 'vendas';
                     $port = '3306';
 
@@ -31,12 +31,17 @@
                     if ($db_connect->connect_error == true) {
                         echo 'Não foi possível conectar à base de dados.';
                     } else {
-                        $sql = "INSERT INTO clientes(nome,email,telefone) VALUES ('$nome', '$email', '$telefone')";
-                    }
-                                                  
-                            $sql = "SELECT * FROM clientes";
-
-                            $result = $db_connect->query($sql);
+                        $sql = "INSERT INTO clientes(nome,email,telefone) VALUES ('$nome', '$email', '$telefone')"; 
+                        
+                        $db_connect->query($sql);
+                        
+                        echo "<script> alert('Sucesso')</script>";
+                        
+                        echo "<script>setTimeout(function(){
+                            window.location.href = 'index.html'}, 2000)</script>"; 
+                                        }
+                                                 
+                            
                     ?>
 
-
+                    

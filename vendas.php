@@ -5,6 +5,8 @@
                     $input = stripslashes($input);
                     $input = htmlspecialchars($input);
 
+                    return $input;
+
                    }
 
                     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -17,7 +19,7 @@
                    
                     $server = 'localhost';
                     $user = 'root';
-                    $password = 'root';
+                    $password = '';
                     $dbname = 'vendas';
                     $port = '3306';
 
@@ -26,13 +28,18 @@
                     if ($db_connect->connect_error == true) {
                         echo 'Não foi possível conectar à base de dados.';
                     } else {
-                        $sql = "INSERT INTO vendas(produto,nome,email,telefone) VALUES ('$produto,'$nome', '$email', '$telefone')";
-                    }
-                     
-                            $sql = "SELECT * FROM clientes";
-
-                            $result = $db_connect->query($sql);
-                                                            
+                        $sql = "INSERT INTO vendas(produto,nome,email,telefone) VALUES ('$produto','$nome', '$email', '$telefone')";
                     
+                     $db_connect->query($sql);
+                            
+                     echo "<script> alert('Sucesso')</script>";
+                        
+                        echo "<script>setTimeout(function(){
+                            window.location.href = 'index.html'}, 2000)</script>"; 
+
+
+                            
+                                                            
+                    }
 
                     ?>

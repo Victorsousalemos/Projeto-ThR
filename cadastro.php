@@ -5,6 +5,7 @@
                     $input = stripslashes($input);
                     $input = htmlspecialchars($input);
 
+                    return $input;
                   }
 
 
@@ -18,7 +19,7 @@
 
                     $server = 'localhost';
                     $user = 'root';
-                    $password = 'root';
+                    $password = '';
                     $dbname = 'vendas';
                     $port = '3306';
 
@@ -29,10 +30,15 @@
                     } else {
                         $sql = "INSERT INTO produtos(nome) VALUES ('$nome')";
                         
-                    }                           
-                            $sql = "SELECT * FROM produtos";
+                        $db_connect->query($sql);
+                                             
+                            
+                        echo "<script> alert('Sucesso')</script>";
+                        
+                        echo "<script>setTimeout(function(){
+                            window.location.href = 'index.html'}, 2000)</script>"; 
 
-                            $result = $db_connect->query($sql);
+                        }      
                     
 
                     ?>
