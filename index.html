@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lojas de vendas</title>
     <link rel="stylesheet" href="style.css" /> 
-      
+    <script src="script.js"></script>
+    
   </head>
   <body>
     <h2>Cadastro de Clientes</h2>     
     
 
-    <form action="form.php" method="post">
+    <form action="form.php" method="POST">
       <div class="form1"><br>
           <div class="field"><input type="text" name="nome" class="field" placeholder="Nome completo" required/><br>            
           <input type="email" name="email" class="field" placeholder="E-mail" required/><br>                
@@ -32,14 +33,15 @@
       </div>
     </form>
 
+
     <h2>Vendas de Produtos</h2>
      <form action="vendas.php" method="post" >
       <div class="form1"><br>
         <input type="text" name="nome" placeholder="Digite o nome do produto" required/><br>
         <div class="field"><input type="text" name="nome" class="field" placeholder="Nome completo" required/><br>            
           <input type="email" name="email" class="field" placeholder="E-mail" required/><br>                
-          <input type="tel" name="telefone" class="field" placeholder="Telefone" required/
-        <div class="cad"></div><input type="submit" name="enviar" value="Confirmar venda?">        
+          <input type="tel" name="telefone" class="field" placeholder="Telefone" required/>
+        <div class="cad"></div><input type="submit" name="enviar" id="inputValor" onchange="funcaoJavascript()"value="Confirmar venda?"/><br>    
       </div>
     </form>
 
@@ -61,4 +63,5 @@
 
 
 
-    <!-- <script src="script.js"></script> -->
+    <!-- <div class="cad"></div><input type="submit" name="enviar" value="Confirmar venda?"> 
+        <input type="text" id="inputValor" onchange="funcaoJavascript()"/><br/></script> -->
