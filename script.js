@@ -1,11 +1,3 @@
-function msg() {
-  alert('Cadastrado com sucesso!')
-}
-
-function msg() {
-  alert('Cadastrado com sucesso!')
-}
-
-function msg() {
-  alert('Consultado com sucesso!')
+funcaoJavascript = function(){
+  alert(document.getElementById('inputValor').value);
 }
