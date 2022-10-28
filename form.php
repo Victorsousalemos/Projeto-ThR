@@ -35,7 +35,7 @@
                         
                         $db_connect->query($sql);
                         
-                        echo "<script> alert('Sucesso')</script>";
+                        echo "<script> alert('Cadastrado com Sucesso')</script>";
                         
                         echo "<script>setTimeout(function(){
                             window.location.href = 'index.html'}, 2000)</script>"; 
