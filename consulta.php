@@ -34,6 +34,20 @@ if ($db_connect->connect_error == true) {
 
     echo "<script> alert('Consultado com Sucesso')</script>";
 
-    echo "<script>setTimeout(function(){
-                            window.location.href = 'index.html'}, 2000)</script>";
+
+    //echo "<script>setTimeout(function(){
+    //                       window.location.href = 'index.html'}, 2000)</script>";
+
+
+
+    //criando a query de consulta à tabela criada 
+    $db_connect->query($sql)("SELECT * FROM consulta"); //caso haja um erro na consulta 
+
+
+    //pecorrendo os registros da consulta. 
+    while ($aux = mysqli_fetch_assoc($sql)) {
+        echo "-----------------------------------------<br />";
+        echo "Nome:" . $aux["nome"] . "<br />";
+        echo "Idade:" . $aux["idade"] . "<br />";
+    }
 }
