@@ -41,13 +41,12 @@ if ($db_connect->connect_error == true) {
 
 
     //criando a query de consulta à tabela criada 
-    $db_connect->query($sql)("SELECT * FROM consulta"); //caso haja um erro na consulta 
+    $result = $db_connect->query("SELECT * FROM consulta");
 
 
     //pecorrendo os registros da consulta. 
-    while ($aux = mysqli_fetch_assoc($sql)) {
+    while ($aux = mysqli_fetch_assoc($result)) {
         echo "-----------------------------------------<br />";
         echo "Nome:" . $aux["nome"] . "<br />";
-        echo "Idade:" . $aux["idade"] . "<br />";
     }
 }
